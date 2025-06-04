@@ -1,14 +1,17 @@
 package dev.pinetree20s.learnspringcorebasic.order;
 
 import dev.pinetree20s.learnspringcorebasic.discount.DiscountPolicy;
-import dev.pinetree20s.learnspringcorebasic.discount.FixDiscountPolicy;
 import dev.pinetree20s.learnspringcorebasic.member.Member;
 import dev.pinetree20s.learnspringcorebasic.member.MemberRepository;
-import dev.pinetree20s.learnspringcorebasic.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(final MemberRepository memberRepository, final DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

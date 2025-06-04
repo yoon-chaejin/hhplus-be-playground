@@ -1,17 +1,25 @@
 package dev.pinetree20s.learnspringcorebasic.order;
 
+import dev.pinetree20s.learnspringcorebasic.AppConfig;
 import dev.pinetree20s.learnspringcorebasic.member.Member;
 import dev.pinetree20s.learnspringcorebasic.member.MemberGrade;
 import dev.pinetree20s.learnspringcorebasic.member.MemberService;
-import dev.pinetree20s.learnspringcorebasic.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class OrderServiceImplTest {
 
-    private final MemberService memberService = new MemberServiceImpl();
-    private final OrderService orderService = new OrderServiceImpl();
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    void setUp() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
+    }
 
     @Test
     @DisplayName("주문 생성 - BASIC 회원은 0원 할인")

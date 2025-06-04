@@ -1,11 +1,19 @@
 package dev.pinetree20s.learnspringcorebasic.member;
 
+import dev.pinetree20s.learnspringcorebasic.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class MemberServiceImplTest {
-    private MemberServiceImpl memberService = new MemberServiceImpl();
+    MemberService memberService;
+
+    @BeforeEach
+    void setUp() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     @DisplayName("회원가입 테스트")
