@@ -1,9 +1,6 @@
 package dev.pinetree20s.learnspringcorebasic.applicationcontext;
 
 import dev.pinetree20s.learnspringcorebasic.AppConfig;
-import dev.pinetree20s.learnspringcorebasic.member.MemberService;
-import dev.pinetree20s.learnspringcorebasic.member.MemberServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
