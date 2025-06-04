@@ -2,6 +2,7 @@ package dev.pinetree20s.learnspringcorebasic;
 
 import dev.pinetree20s.learnspringcorebasic.discount.DiscountPolicy;
 import dev.pinetree20s.learnspringcorebasic.discount.FixDiscountPolicy;
+import dev.pinetree20s.learnspringcorebasic.discount.RateDiscountPolicy;
 import dev.pinetree20s.learnspringcorebasic.member.MemberRepository;
 import dev.pinetree20s.learnspringcorebasic.member.MemberService;
 import dev.pinetree20s.learnspringcorebasic.member.MemberServiceImpl;
@@ -24,6 +25,7 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+//        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }

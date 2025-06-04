@@ -37,7 +37,7 @@ class OrderServiceImplTest {
     }
 
     @Test
-    @DisplayName("주문 생성 - VIP 회원은 1000원 할인")
+    @DisplayName("주문 생성 - VIP 회원은 10% 할인")
     void createOrderForMemberWithVipGrade() {
         //given
         Long memberId = 2L;
@@ -48,7 +48,7 @@ class OrderServiceImplTest {
         Order result = orderService.createOrder(memberId, "상품", 20_000);
 
         //then
-        Assertions.assertThat(result.calculatePrice()).isEqualTo(19_000);
+        Assertions.assertThat(result.calculatePrice()).isEqualTo(18_000);
     }
 
 }
