@@ -40,4 +40,11 @@ class ApplicationContextTest {
 
         //then
     }
+
+    @Test
+    @DisplayName("AppConfig 정보 출력하기")
+    void printAppConfig() {
+        AppConfig appconfig = context.getBean(AppConfig.class);
+        System.out.println(appconfig);
+    }
 }
