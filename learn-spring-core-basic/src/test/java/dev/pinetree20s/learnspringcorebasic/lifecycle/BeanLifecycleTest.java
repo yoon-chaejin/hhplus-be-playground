@@ -22,7 +22,7 @@ public class BeanLifecycleTest {
 
     @Configuration
     static class BeanLifecycleConfig {
-        @Bean(initMethod = "init", destroyMethod = "close")
+        @Bean
         public NetworkClient networkClient() {
             // 객체 생성
             NetworkClient networkClient =  new NetworkClient();
