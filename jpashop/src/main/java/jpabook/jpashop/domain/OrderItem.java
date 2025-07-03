@@ -2,7 +2,6 @@ package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import org.apache.catalina.User;
 
 @Entity
 @Table(name = "order_item")
