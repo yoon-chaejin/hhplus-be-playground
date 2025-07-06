@@ -1,7 +1,6 @@
 package jpabook.jpashop.service;
 
 import jakarta.transaction.Transactional;
-import jpabook.jpashop.MemberService;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
@@ -13,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 @Transactional
-public class MemberServiceTest {
+class MemberServiceTest {
 
     @Autowired
     MemberService memberService;
@@ -21,7 +20,7 @@ public class MemberServiceTest {
     MemberRepository memberRepository;
 
     @Test
-    public void 회원가입() {
+    void 회원가입() {
         //given
         Member member = new Member();
         member.setName("kim");
@@ -34,7 +33,7 @@ public class MemberServiceTest {
     }
 
     @Test
-    public void 중복_회원_예외() {
+    void 중복_회원_예외() {
         //given
         Member member1 = new Member();
         member1.setName("kim");
