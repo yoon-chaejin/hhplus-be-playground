@@ -25,7 +25,7 @@ public class OrderService {
 
         Delivery delivery = Delivery.createDelivery(member.getAddress(), DeliveryStatus.READY);
 
-        OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice() * count, count);
+        OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice(), count);
 
         Order order = Order.createOrder(member, delivery, orderItem);
 
