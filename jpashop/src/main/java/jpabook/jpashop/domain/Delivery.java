@@ -19,4 +19,11 @@ public class Delivery {
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status; // 주문상태 [READY, COMPLETE]
+
+    public static Delivery createDelivery(Address address, DeliveryStatus status) {
+        Delivery delivery = new Delivery();
+        delivery.setAddress(address);
+        delivery.setStatus(status);
+        return delivery;
+    }
 }
